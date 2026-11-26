@@ -1,12 +1,12 @@
 # Voodoo Edge
 
-[![CI](https://github.com/helderperez-dev/voodoo-edge/actions/workflows/ci.yml/badge.svg)](https://github.com/helderperez-dev/voodoo-edge/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/helderperez-dev/voodoo-edge)](https://github.com/helderperez-dev/voodoo-edge/releases)
+[![CI](https://github.com/helderperez-dev/grumo-edge/actions/workflows/ci.yml/badge.svg)](https://github.com/helderperez-dev/grumo-edge/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/helderperez-dev/grumo-edge)](https://github.com/helderperez-dev/grumo-edge/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PlatformIO](https://img.shields.io/badge/PlatformIO-Registry-orange.svg)](https://registry.platformio.org/libraries/helderperez-dev/voodoo-edge)
 [![Arduino](https://img.shields.io/badge/Arduino-Library_Manager-teal.svg)](#arduino-ide)
 
-C++ SDK for connecting physical devices to the [Voodoo Runtime](https://github.com/nicegoodthings/voodoo).
+C++ SDK for connecting physical devices to the [Voodoo Runtime](https://github.com/helderperez-dev/grumo).
 
 ## What is Voodoo Edge?
 
@@ -57,11 +57,11 @@ arduino-cli lib install "voodoo-edge"
 ```bash
 # Clone into your Arduino libraries folder
 cd ~/Arduino/libraries
-git clone https://github.com/helderperez-dev/voodoo-edge.git
+git clone https://github.com/helderperez-dev/grumo-edge.git
 
 # Or into your PlatformIO project's lib folder
 cd your-project/lib
-git clone https://github.com/helderperez-dev/voodoo-edge.git
+git clone https://github.com/helderperez-dev/grumo-edge.git
 ```
 
 ## Quick Start
