@@ -5,7 +5,7 @@
   "keywords": "voodoo, iot, edge, mqtt, http, esp32, arduino, embedded, hal, motor, servo, sensor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/helderperez-dev/voodoo-edge.git"
+    "url": "https://github.com/helderperez-dev/grumo-edge.git"
   },
   "authors": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "license": "MIT",
-  "homepage": "https://github.com/helderperez-dev/voodoo-edge",
+  "homepage": "https://github.com/helderperez-dev/grumo-edge",
   "frameworks": "arduino",
   "platforms": [
     "espressif32",
