@@ -1,14 +1,14 @@
 // mqtt_transport.cpp
-// Voodoo Edge — MQTT transport implementation
+// Grumo Edge — MQTT transport implementation
 
-#ifndef VOODOO_EDGE_NATIVE_TEST
+#ifndef GRUMO_EDGE_NATIVE_TEST
 
-#include "voodoo_edge/platform/esp32/mqtt_transport.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/esp32/mqtt_transport.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 #include <cstdio>
 
-namespace voodoo {
+namespace grumo {
 namespace platform {
 namespace esp32 {
 
@@ -140,6 +140,6 @@ void MqttTransport::static_callback(char* topic, uint8_t* payload, unsigned int 
 
 } // namespace esp32
 } // namespace platform
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VOODOO_EDGE_NATIVE_TEST
+#endif // GRUMO_EDGE_NATIVE_TEST

@@ -1,18 +1,18 @@
 // main.cpp
-// Voodoo Edge — Motor Control Example
+// Grumo Edge — Motor Control Example
 //
-// Demonstrates motor and servo control via Voodoo Runtime effects.
+// Demonstrates motor and servo control via Grumo Runtime effects.
 // Capabilities:
 //   motor.speed  — set motor speed (-1.0 to 1.0)
 //   motor.stop   — stop the motor
 //   servo.angle  — set servo angle (0-180)
 
 #include <Arduino.h>
-#include <voodoo_edge.h>
-#include "voodoo_edge/platform/esp32/esp32_platform.h"
-#include "voodoo_edge/platform/esp32/mqtt_transport.h"
+#include <grumo_edge.h>
+#include "grumo_edge/platform/esp32/esp32_platform.h"
+#include "grumo_edge/platform/esp32/mqtt_transport.h"
 
-using namespace voodoo;
+using namespace grumo;
 
 // Configuration
 #ifndef WIFI_SSID
@@ -39,7 +39,7 @@ using namespace voodoo;
 static edge::Device device;
 static hardware::MotorController *motor = nullptr;
 static hardware::ServoController *servo = nullptr;
-static voodoo::platform::esp32::MqttTransport *transport = nullptr;
+static grumo::platform::esp32::MqttTransport *transport = nullptr;
 
 // ---------------------------------------------------------------------------
 // Capability handlers
@@ -93,10 +93,10 @@ static bool handle_servo_angle(
 
 void setup()
 {
-    voodoo::platform::esp32::init();
-    auto &plat = voodoo::platform::esp32::platform();
+    grumo::platform::esp32::init();
+    auto &plat = grumo::platform::esp32::platform();
     plat.logging->begin(115200);
-    plat.logging->printf("\n[voodoo-edge] motor_control starting\n");
+    plat.logging->printf("\n[grumo-edge] motor_control starting\n");
 
     // Device ID from MAC
     char device_id[32];
@@ -129,7 +129,7 @@ void setup()
     }
 
     // MQTT
-    voodoo::platform::esp32::MqttTransport::Config cfg = {
+    grumo::platform::esp32::MqttTransport::Config cfg = {
         .broker_host = MQTT_BROKER_HOST,
         .broker_port = MQTT_BROKER_PORT,
         .device_id = device_id,
@@ -138,7 +138,7 @@ void setup()
         .keepalive_s = 60,
         .retry_initial_ms = 1000,
         .retry_max_ms = 30000};
-    transport = new voodoo::platform::esp32::MqttTransport(cfg);
+    transport = new grumo::platform::esp32::MqttTransport(cfg);
     device.connect(*transport);
 }
 

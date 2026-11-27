@@ -1,21 +1,21 @@
 // mqtt_transport.h
-// Voodoo Edge — MQTT transport for ESP32
+// Grumo Edge — MQTT transport for ESP32
 //
 // Implements the Transport interface using PubSubClient over WiFi.
 
-#ifndef VODOO_PLATFORM_ESP32_MQTT_TRANSPORT_H
-#define VODOO_PLATFORM_ESP32_MQTT_TRANSPORT_H
+#ifndef GRUMO_PLATFORM_ESP32_MQTT_TRANSPORT_H
+#define GRUMO_PLATFORM_ESP32_MQTT_TRANSPORT_H
 
-#include "voodoo_edge/core/transport.h"
+#include "grumo_edge/core/transport.h"
 #include <PubSubClient.h>
 #include <WiFiClient.h>
 
-namespace voodoo {
+namespace grumo {
 namespace platform {
 namespace esp32 {
 
 // MQTT topic constants
-constexpr const char* MQTT_TOPIC_PREFIX = "voodoo/v1/devices";
+constexpr const char* MQTT_TOPIC_PREFIX = "grumo/v1/devices";
 
 class MqttTransport : public edge::Transport {
 public:
@@ -61,6 +61,6 @@ private:
 
 } // namespace esp32
 } // namespace platform
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_PLATFORM_ESP32_MQTT_TRANSPORT_H
+#endif // GRUMO_PLATFORM_ESP32_MQTT_TRANSPORT_H
