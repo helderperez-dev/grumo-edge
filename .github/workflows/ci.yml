@@ -98,7 +98,7 @@ jobs:
           # Ensure no secrets are committed
           ! grep -r "password\|secret\|token" examples/ --include="*.cpp" --include="*.h" -l || true
           # Ensure all headers have include guards
-          for f in src/voodoo_edge/**/*.h; do
+          for f in src/grumo_edge/**/*.h; do
             if ! grep -q "#ifndef\|#pragma once" "$f"; then
               echo "Missing include guard: $f"
               exit 1

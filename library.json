@@ -1,8 +1,8 @@
 {
-  "name": "voodoo-edge",
+  "name": "grumo-edge",
   "version": "1.0.0",
-  "description": "C++ SDK for connecting physical devices to the Voodoo Runtime. Features Device facade, connection manager, MQTT/HTTP transport, HAL (GPIO/PWM/ADC/I2C/SPI), and hardware components (LED, button, motor, servo, relay, buzzer, encoder, sensors).",
-  "keywords": "voodoo, iot, edge, mqtt, http, esp32, arduino, embedded, hal, motor, servo, sensor",
+  "description": "C++ SDK for connecting physical devices to the Grumo Runtime. Features Device facade, connection manager, MQTT/HTTP transport, HAL (GPIO/PWM/ADC/I2C/SPI), and hardware components (LED, button, motor, servo, relay, buzzer, encoder, sensors).",
+  "keywords": "grumo, iot, edge, mqtt, http, esp32, arduino, embedded, hal, motor, servo, sensor",
   "repository": {
     "type": "git",
     "url": "https://github.com/helderperez-dev/grumo-edge.git"
@@ -23,7 +23,7 @@
     "ststm32",
     "rp2040"
   ],
-  "headers": "voodoo_edge.h",
+  "headers": "grumo_edge.h",
   "build": {
     "srcDir": "src"
   },

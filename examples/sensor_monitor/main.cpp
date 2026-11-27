@@ -1,5 +1,5 @@
 // main.cpp
-// Voodoo Edge — Sensor Monitor Example
+// Grumo Edge — Sensor Monitor Example
 //
 // Demonstrates temperature sensor reading and periodic state reporting.
 // Capabilities:
@@ -9,11 +9,11 @@
 //   temperature.changed — emitted when temperature changes by > 0.5°C
 
 #include <Arduino.h>
-#include <voodoo_edge.h>
-#include "voodoo_edge/platform/esp32/esp32_platform.h"
-#include "voodoo_edge/platform/esp32/mqtt_transport.h"
+#include <grumo_edge.h>
+#include "grumo_edge/platform/esp32/esp32_platform.h"
+#include "grumo_edge/platform/esp32/mqtt_transport.h"
 
-using namespace voodoo;
+using namespace grumo;
 
 // Configuration
 #ifndef WIFI_SSID
@@ -38,7 +38,7 @@ using namespace voodoo;
 static edge::Device device;
 static hardware::NtcThermistor *temp_sensor = nullptr;
 static hardware::SensorReader *analog_sensor = nullptr;
-static voodoo::platform::esp32::MqttTransport *transport = nullptr;
+static grumo::platform::esp32::MqttTransport *transport = nullptr;
 static float last_temp = -999.0f;
 static uint32_t last_read = 0;
 
@@ -66,10 +66,10 @@ static bool handle_sensor_read(
 
 void setup()
 {
-    voodoo::platform::esp32::init();
-    auto &plat = voodoo::platform::esp32::platform();
+    grumo::platform::esp32::init();
+    auto &plat = grumo::platform::esp32::platform();
     plat.logging->begin(115200);
-    plat.logging->printf("\n[voodoo-edge] sensor_monitor starting\n");
+    plat.logging->printf("\n[grumo-edge] sensor_monitor starting\n");
 
     // Device ID
     char device_id[32];
@@ -99,7 +99,7 @@ void setup()
     }
 
     // MQTT
-    voodoo::platform::esp32::MqttTransport::Config cfg = {
+    grumo::platform::esp32::MqttTransport::Config cfg = {
         .broker_host = MQTT_BROKER_HOST,
         .broker_port = MQTT_BROKER_PORT,
         .device_id = device_id,
@@ -108,7 +108,7 @@ void setup()
         .keepalive_s = 60,
         .retry_initial_ms = 1000,
         .retry_max_ms = 30000};
-    transport = new voodoo::platform::esp32::MqttTransport(cfg);
+    transport = new grumo::platform::esp32::MqttTransport(cfg);
     device.connect(*transport);
 }
 
@@ -116,7 +116,7 @@ void loop()
 {
     device.update();
 
-    auto &plat = voodoo::platform::esp32::platform();
+    auto &plat = grumo::platform::esp32::platform();
     uint32_t now = plat.timer->millis();
 
     if ((now - last_read) >= READ_INTERVAL_MS)

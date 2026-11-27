@@ -1,5 +1,5 @@
 // main.cpp
-// Voodoo Edge — Connected Device Example
+// Grumo Edge — Connected Device Example
 //
 // A comprehensive example showing multiple capabilities on one device:
 //   - LED control (on/off/toggle)
@@ -10,14 +10,14 @@
 //   - Device restart
 //
 // This demonstrates how a real product (e.g. vacuum former controller)
-// would use Voodoo Edge.
+// would use Grumo Edge.
 
 #include <Arduino.h>
-#include <voodoo_edge.h>
-#include "voodoo_edge/platform/esp32/esp32_platform.h"
-#include "voodoo_edge/platform/esp32/mqtt_transport.h"
+#include <grumo_edge.h>
+#include "grumo_edge/platform/esp32/esp32_platform.h"
+#include "grumo_edge/platform/esp32/mqtt_transport.h"
 
-using namespace voodoo;
+using namespace grumo;
 
 // Configuration
 #ifndef WIFI_SSID
@@ -48,7 +48,7 @@ static hardware::ButtonController *button = nullptr;
 static hardware::RelayController *relay = nullptr;
 static hardware::NtcThermistor *temp_sensor = nullptr;
 static hardware::BuzzerController *buzzer = nullptr;
-static voodoo::platform::esp32::MqttTransport *transport = nullptr;
+static grumo::platform::esp32::MqttTransport *transport = nullptr;
 
 // ---------------------------------------------------------------------------
 // Capability handlers
@@ -110,7 +110,7 @@ static bool handle_buzzer(const edge::EdgeMessage &effect, JsonObject result, vo
 static bool handle_restart(const edge::EdgeMessage &effect, JsonObject result, void *ud)
 {
     result["status"] = "restarting";
-    auto &plat = voodoo::hal::get_platform();
+    auto &plat = grumo::hal::get_platform();
     plat.timer->delay(100);
     ESP.restart();
     return true;
@@ -134,10 +134,10 @@ static void on_button_press(void *)
 
 void setup()
 {
-    voodoo::platform::esp32::init();
-    auto &plat = voodoo::platform::esp32::platform();
+    grumo::platform::esp32::init();
+    auto &plat = grumo::platform::esp32::platform();
     plat.logging->begin(115200);
-    plat.logging->printf("\n[voodoo-edge] connected_device starting\n");
+    plat.logging->printf("\n[grumo-edge] connected_device starting\n");
 
     // Device ID
     char device_id[32];
@@ -182,7 +182,7 @@ void setup()
     }
 
     // MQTT
-    voodoo::platform::esp32::MqttTransport::Config cfg = {
+    grumo::platform::esp32::MqttTransport::Config cfg = {
         .broker_host = MQTT_BROKER_HOST,
         .broker_port = MQTT_BROKER_PORT,
         .device_id = device_id,
@@ -191,7 +191,7 @@ void setup()
         .keepalive_s = 60,
         .retry_initial_ms = 1000,
         .retry_max_ms = 30000};
-    transport = new voodoo::platform::esp32::MqttTransport(cfg);
+    transport = new grumo::platform::esp32::MqttTransport(cfg);
     device.connect(*transport);
 
     // Startup beep
@@ -205,7 +205,7 @@ void loop()
 
     // Periodic temperature reading
     static uint32_t last_temp = 0;
-    auto &plat = voodoo::platform::esp32::platform();
+    auto &plat = grumo::platform::esp32::platform();
     uint32_t now = plat.timer->millis();
     if ((now - last_temp) >= 10000)
     {

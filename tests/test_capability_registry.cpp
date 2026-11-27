@@ -1,10 +1,10 @@
 // test_capability_registry.cpp
-// Voodoo Edge — Capability registry unit tests
+// Grumo Edge — Capability registry unit tests
 
 #include <unity.h>
-#include "voodoo_edge/core/capability_registry.h"
+#include "grumo_edge/core/capability_registry.h"
 
-using namespace voodoo::edge;
+using namespace grumo::edge;
 
 static bool handler_called = false;
 static bool test_handler(const EdgeMessage& effect, JsonObject result, void* user_data) {

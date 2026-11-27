@@ -153,8 +153,8 @@ jobs:
             cp "$dir/firmware.bin" "release-assets/${example}-firmware.bin"
           done
           # Also create a source archive
-          git archive --format=zip --prefix="voodoo-edge-${{ needs.validate.outputs.version }}/" HEAD > \
-            "release-assets/voodoo-edge-${{ needs.validate.outputs.version }}-source.zip"
+          git archive --format=zip --prefix="grumo-edge-${{ needs.validate.outputs.version }}/" HEAD > \
+            "release-assets/grumo-edge-${{ needs.validate.outputs.version }}-source.zip"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

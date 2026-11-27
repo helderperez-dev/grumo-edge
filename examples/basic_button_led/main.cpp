@@ -1,9 +1,9 @@
 // main.cpp
-// Voodoo Edge — Basic Button + LED Example
+// Grumo Edge — Basic Button + LED Example
 //
-// Demonstrates the voodoo-edge SDK with:
+// Demonstrates the grumo-edge SDK with:
 // - WiFi connection
-// - MQTT transport to Voodoo Runtime
+// - MQTT transport to Grumo Runtime
 // - LED control via "led.control" effect
 // - Button press events via "button.pressed"
 // - Heartbeat and state sync
@@ -11,11 +11,11 @@
 // Uses the high-level Device facade for minimal boilerplate.
 
 #include <Arduino.h>
-#include <voodoo_edge.h>
-#include "voodoo_edge/platform/esp32/esp32_platform.h"
-#include "voodoo_edge/platform/esp32/mqtt_transport.h"
+#include <grumo_edge.h>
+#include "grumo_edge/platform/esp32/esp32_platform.h"
+#include "grumo_edge/platform/esp32/mqtt_transport.h"
 
-using namespace voodoo;
+using namespace grumo;
 
 // ---------------------------------------------------------------------------
 // Configuration — replace with your values
@@ -47,7 +47,7 @@ using namespace voodoo;
 static edge::Device device;
 static hardware::LedController *led = nullptr;
 static hardware::ButtonController *button = nullptr;
-static voodoo::platform::esp32::MqttTransport *transport = nullptr;
+static grumo::platform::esp32::MqttTransport *transport = nullptr;
 
 // ---------------------------------------------------------------------------
 // Capability handlers
@@ -91,7 +91,7 @@ static bool handle_led_control(
 // ---------------------------------------------------------------------------
 static void on_button_press(void *user_data)
 {
-    auto &plat = voodoo::hal::get_platform();
+    auto &plat = grumo::hal::get_platform();
     plat.logging->printf("[app] button pressed\n");
 
     JsonDocument payload_doc;
@@ -107,10 +107,10 @@ static void on_button_press(void *user_data)
 void setup()
 {
     // Initialize ESP32 platform
-    voodoo::platform::esp32::init();
-    auto &plat = voodoo::platform::esp32::platform();
+    grumo::platform::esp32::init();
+    auto &plat = grumo::platform::esp32::platform();
     plat.logging->begin(115200);
-    plat.logging->printf("\n[voodoo-edge] basic_button_led starting\n");
+    plat.logging->printf("\n[grumo-edge] basic_button_led starting\n");
 
     // Generate device ID from MAC address
     char device_id[32];
@@ -153,7 +153,7 @@ void setup()
     }
 
     // Initialize MQTT transport and connect
-    voodoo::platform::esp32::MqttTransport::Config mqtt_config = {
+    grumo::platform::esp32::MqttTransport::Config mqtt_config = {
         .broker_host = MQTT_BROKER_HOST,
         .broker_port = MQTT_BROKER_PORT,
         .device_id = device_id,
@@ -163,7 +163,7 @@ void setup()
         .retry_initial_ms = 1000,
         .retry_max_ms = 30000};
 
-    transport = new voodoo::platform::esp32::MqttTransport(mqtt_config);
+    transport = new grumo::platform::esp32::MqttTransport(mqtt_config);
     device.connect(*transport);
 
     plat.logging->printf("[app] ready\n");

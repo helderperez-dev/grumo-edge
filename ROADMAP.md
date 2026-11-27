@@ -1,19 +1,19 @@
-Voodoo Edge — Embedded SDK
+Grumo Edge — Embedded SDK
 
 Architecture & Development Specification
 
 Status: Architecture / Development Guide
-Project: voodoo-edge
+Project: grumo-edge
 Primary Target: ESP32
 Future Targets: Arduino, RP2040, STM32 and other embedded platforms
-Parent Ecosystem: Voodoo
-Core Principle: Voodoo Edge is an SDK/adapter that turns a device into a node of the Voodoo Mesh. It is not a second Voodoo Runtime.
+Parent Ecosystem: Grumo
+Core Principle: Grumo Edge is an SDK/adapter that turns a device into a node of the Grumo Mesh. It is not a second Grumo Runtime.
 
 ⸻
 
 1. Vision
 
-Voodoo Edge is the embedded SDK responsible for connecting physical and edge devices to the Voodoo ecosystem.
+Grumo Edge is the embedded SDK responsible for connecting physical and edge devices to the Grumo ecosystem.
 
 Its purpose is to provide a consistent interface for:
 
@@ -23,12 +23,12 @@ Its purpose is to provide a consistent interface for:
 * events;
 * commands;
 * state reporting;
-* communication with the Voodoo Runtime;
-* participation in the Voodoo Mesh.
+* communication with the Grumo Runtime;
+* participation in the Grumo Mesh.
 
 The first implementation targets ESP32, but the architecture MUST NOT be fundamentally coupled to ESP32.
 
-The long-term goal is to allow different platforms to become Voodoo Edge nodes:
+The long-term goal is to allow different platforms to become Grumo Edge nodes:
 
 ESP32
 Arduino
@@ -41,28 +41,28 @@ Node.js
 Go
 ...
 
-All of them communicate with the Voodoo Runtime through the same conceptual Edge contract.
+All of them communicate with the Grumo Runtime through the same conceptual Edge contract.
 
 ⸻
 
 2. Core Architectural Principle
 
-There is exactly one Voodoo Runtime.
+There is exactly one Grumo Runtime.
 
-Voodoo Edge MUST NOT recreate or duplicate the Runtime.
+Grumo Edge MUST NOT recreate or duplicate the Runtime.
 
 The architecture is:
 
                          V O O D O O
                              │
-                      Voodoo Runtime
+                      Grumo Runtime
                              │
-                       Voodoo Mesh
+                       Grumo Mesh
                              │
         ┌────────────────────┼────────────────────┐
         │                    │                    │
         ▼                    ▼                    ▼
-   Voodoo Edge          Voodoo Edge          Voodoo Edge
+   Grumo Edge          Grumo Edge          Grumo Edge
       ESP32                 ESP32                RP2040
         │                    │                    │
      Hardware             Hardware             Hardware
@@ -75,9 +75,9 @@ The Edge is responsible for representing and operating a physical/edge node.
 
 3. Responsibilities
 
-3.1 Voodoo Runtime owns
+3.1 Grumo Runtime owns
 
-The Voodoo Runtime is responsible for:
+The Grumo Runtime is responsible for:
 
 * global state;
 * device registry;
@@ -103,9 +103,9 @@ The Edge MUST NOT implement these responsibilities.
 
 ⸻
 
-4. Responsibilities of Voodoo Edge
+4. Responsibilities of Grumo Edge
 
-Voodoo Edge is responsible for:
+Grumo Edge is responsible for:
 
 * identifying itself;
 * connecting to the Runtime;
@@ -126,28 +126,28 @@ The Edge should remain as small and deterministic as reasonably possible.
 
 ⸻
 
-5. What Voodoo Edge Is NOT
+5. What Grumo Edge Is NOT
 
-Voodoo Edge is NOT:
+Grumo Edge is NOT:
 
-* a second Voodoo Runtime;
+* a second Grumo Runtime;
 * a workflow engine;
 * an agent runtime;
 * a database;
 * a global state manager;
 * a mesh orchestrator;
 * a business-logic framework;
-* a replacement for the Voodoo Framework;
+* a replacement for the Grumo Framework;
 * an ESP32-only framework;
 * a collection of unrelated hardware drivers.
 
-The Edge is the execution endpoint of the Voodoo architecture.
+The Edge is the execution endpoint of the Grumo architecture.
 
 ⸻
 
 6. Conceptual Model
 
-Every Voodoo Edge represents a node.
+Every Grumo Edge represents a node.
 
 A node has:
 
@@ -221,7 +221,7 @@ The identity system must be platform-independent.
 
 8. Capabilities
 
-Capabilities are one of the most important concepts in Voodoo Edge.
+Capabilities are one of the most important concepts in Grumo Edge.
 
 The Runtime should interact with capabilities, not implementation details.
 
@@ -278,7 +278,7 @@ Conceptually:
 Application
      │
      ▼
-Voodoo Edge API
+Grumo Edge API
      │
      ▼
 Hardware Abstraction Layer
@@ -327,7 +327,7 @@ platform/
 
 ⸻
 
-11. Voodoo Edge Layers
+11. Grumo Edge Layers
 
 The architecture should be organized into clear layers.
 
@@ -335,7 +335,7 @@ The architecture should be organized into clear layers.
 │           Application               │
 │  Vacuum Former / Robot / Sensor     │
 ├─────────────────────────────────────┤
-│          Voodoo Edge API            │
+│          Grumo Edge API            │
 │ Device / Components / Capabilities  │
 ├─────────────────────────────────────┤
 │              HAL                    │
@@ -351,7 +351,7 @@ Communication is a separate concern:
 
 Application
      │
-Voodoo Edge
+Grumo Edge
      │
 Edge Protocol
      │
@@ -359,7 +359,7 @@ Transport
      │
 Network
      │
-Voodoo Runtime
+Grumo Runtime
 
 ⸻
 
@@ -422,7 +422,7 @@ Platform-specific implementations provide the actual behavior.
 
 14. Components
 
-Voodoo Edge may provide reusable hardware components.
+Grumo Edge may provide reusable hardware components.
 
 Initial candidates:
 
@@ -453,7 +453,7 @@ The component should not unnecessarily expose platform-specific details.
 
 15. Communication Layer
 
-Communication with the Voodoo Runtime MUST be separated from hardware.
+Communication with the Grumo Runtime MUST be separated from hardware.
 
 Conceptually:
 
@@ -583,7 +583,7 @@ Temperature Edge
        │
        │ temperature.changed
        ▼
-Voodoo Runtime
+Grumo Runtime
        │
        │ command
        ▼
@@ -670,7 +670,7 @@ It is local hardware execution.
 
 22. Mesh Philosophy
 
-The Voodoo Mesh is logically coordinated by the Voodoo Runtime.
+The Grumo Mesh is logically coordinated by the Grumo Runtime.
 
 Edges should not require knowledge of the entire mesh.
 
@@ -713,7 +713,7 @@ Optional low-latency:
 Edge A ─────────→ Edge B
        direct
 
-The direct protocol should still follow the same Voodoo device/capability model.
+The direct protocol should still follow the same Grumo device/capability model.
 
 ⸻
 
@@ -847,21 +847,21 @@ Do not build speculative abstractions merely to claim compatibility.
 
 The concept of Edge should not be restricted to C++ or microcontrollers.
 
-The Voodoo ecosystem may eventually provide:
+The Grumo ecosystem may eventually provide:
 
-voodoo-edge-esp32
-voodoo-edge-python
-voodoo-edge-rust
-voodoo-edge-node
-voodoo-edge-go
+grumo-edge-esp32
+grumo-edge-python
+grumo-edge-rust
+grumo-edge-node
+grumo-edge-go
 
 These implementations represent the same logical Edge contract.
 
 For example:
 
-                 Voodoo Runtime
+                 Grumo Runtime
                        │
-                  Voodoo Mesh
+                  Grumo Mesh
                        │
         ┌──────────────┼──────────────┐
         │              │              │
@@ -903,10 +903,10 @@ The Runtime sees them as nodes with capabilities.
 
 Recommended initial repository structure:
 
-voodoo-edge/
+grumo-edge/
 │
 ├── src/
-│   └── voodoo_edge/
+│   └── grumo_edge/
 │       ├── core/
 │       │   ├── device/
 │       │   ├── identity/
@@ -947,7 +947,7 @@ voodoo-edge/
 │       ├── platform/
 │       │   └── esp32/
 │       │
-│       └── VoodooEdge.h
+│       └── GrumoEdge.h
 │
 ├── examples/
 │   ├── basic-device/
@@ -979,11 +979,11 @@ The exact physical directory layout may evolve, but the architectural separation
 
 33. Product/Application Repositories
 
-Individual products should live outside voodoo-edge.
+Individual products should live outside grumo-edge.
 
 For example:
 
-voodoo-edge
+grumo-edge
 vacuum-former
 noise-monitor
 creator-controller
@@ -991,7 +991,7 @@ robot
 
 A product imports the SDK:
 
-#include <VoodooEdge.h>
+#include <GrumoEdge.h>
 
 The product repository contains only application-specific behavior.
 
@@ -1011,9 +1011,9 @@ vacuum-former/
 
 34. Example: Vacuum Former
 
-The Vacuum Former should consume Voodoo Edge.
+The Vacuum Former should consume Grumo Edge.
 
-Voodoo Edge provides:
+Grumo Edge provides:
 
 Motor
 Relay
@@ -1043,7 +1043,7 @@ Do NOT place Vacuum Former logic into the generic SDK.
 
 A Noise Monitor might use:
 
-#include <VoodooEdge.h>
+#include <GrumoEdge.h>
 
 and expose:
 
@@ -1052,7 +1052,7 @@ temperature
 display
 network
 
-The Voodoo Runtime can consume:
+The Grumo Runtime can consume:
 
 sound.level.changed
 
@@ -1104,7 +1104,7 @@ over hardcoding Runtime-specific behavior into components.
 
 38. Dependency Principles
 
-Voodoo Edge should minimize dependencies.
+Grumo Edge should minimize dependencies.
 
 Core should ideally have no external dependencies.
 
@@ -1411,7 +1411,7 @@ The Runtime can then understand what the device can do.
 
 50. No Product-Specific Assumptions
 
-Voodoo Edge MUST NOT contain assumptions such as:
+Grumo Edge MUST NOT contain assumptions such as:
 
 Vacuum Former
 Noise Monitor
@@ -1439,7 +1439,7 @@ Mesh database
 Global state manager
 Cross-device orchestration engine
 
-These belong to Voodoo Runtime.
+These belong to Grumo Runtime.
 
 If functionality seems to require one of these, first ask:
 
@@ -1456,20 +1456,20 @@ The ideal Edge should feel like:
 Physical world
       │
       ▼
-Voodoo Edge
+Grumo Edge
       │
       ▼
-Voodoo Protocol
+Grumo Protocol
       │
       ▼
-Voodoo Runtime
+Grumo Runtime
 
 Not:
 
 Physical world
       │
       ▼
-Mini Voodoo Runtime
+Mini Grumo Runtime
       │
       ▼
 Another Runtime
@@ -1544,7 +1544,7 @@ Reconnect
 
 Phase 5 — Runtime Integration
 
-Connect a real ESP32 to the Voodoo Runtime.
+Connect a real ESP32 to the Grumo Runtime.
 
 The device should:
 
@@ -1565,7 +1565,7 @@ Use the SDK to build:
 
 Vacuum Former
 
-without adding product-specific code to Voodoo Edge.
+without adding product-specific code to Grumo Edge.
 
 ⸻
 
@@ -1594,17 +1594,17 @@ all implementing the same logical Edge contract/protocol.
 
 54. Definition of Done
 
-Voodoo Edge v1 should be considered successful when a developer can:
+Grumo Edge v1 should be considered successful when a developer can:
 
-1. Install Voodoo Edge.
+1. Install Grumo Edge.
 2. Select an ESP32 board.
 3. Include the SDK.
 4. Create a device.
 5. Give it an identity.
 6. Expose hardware capabilities.
-7. Connect to a Voodoo Runtime.
+7. Connect to a Grumo Runtime.
 8. Register automatically.
-9. See the device in the Voodoo Mesh.
+9. See the device in the Grumo Mesh.
 10. Receive a command from the Runtime.
 11. Execute it on hardware.
 12. Emit an event.
@@ -1614,8 +1614,8 @@ Voodoo Edge v1 should be considered successful when a developer can:
 
 Example:
 
-#include <VoodooEdge.h>
-VoodooEdge device;
+#include <GrumoEdge.h>
+GrumoEdge device;
 void setup() {
     device.begin("example-device");
     device.expose("led", "gpio.output");
@@ -1632,12 +1632,12 @@ The exact API may change during implementation, but the architectural behavior s
 
 55. Final Architecture
 
-The complete Voodoo architecture should ultimately look like:
+The complete Grumo architecture should ultimately look like:
 
                          V O O D O O
                               │
                      ┌────────┴────────┐
-                     │ Voodoo Runtime  │
+                     │ Grumo Runtime  │
                      │                 │
                      │ State           │
                      │ Agents          │
@@ -1648,14 +1648,14 @@ The complete Voodoo architecture should ultimately look like:
                      │ Persistence     │
                      └────────┬────────┘
                               │
-                       Voodoo Protocol
+                       Grumo Protocol
                               │
-                       Voodoo Mesh
+                       Grumo Mesh
                               │
           ┌───────────────────┼───────────────────┐
           │                   │                   │
           ▼                   ▼                   ▼
-   Voodoo Edge          Voodoo Edge          Voodoo Edge
+   Grumo Edge          Grumo Edge          Grumo Edge
       ESP32                Python               Rust
           │                   │                   │
        Hardware            Camera              Service
@@ -1670,11 +1670,11 @@ The Runtime orchestrates. The Edge executes.
 
 And the ecosystem rule is:
 
-Any platform capable of implementing the Voodoo Edge contract can become a node in the Voodoo Mesh.
+Any platform capable of implementing the Grumo Edge contract can become a node in the Grumo Mesh.
 
 The hardware, programming language, MCU, operating system, and implementation details are secondary.
 
-The Voodoo Runtime sees:
+The Grumo Runtime sees:
 
 Identity
 Capabilities
@@ -1688,15 +1688,15 @@ That is the stable contract.
 
 56. Guiding Principle
 
-When deciding whether a feature belongs in Voodoo Edge, ask:
+When deciding whether a feature belongs in Grumo Edge, ask:
 
-Does it make a platform capable of becoming a Voodoo Mesh node?
+Does it make a platform capable of becoming a Grumo Mesh node?
 
 If yes, it probably belongs in Edge.
 
 Does it coordinate multiple devices or represent global application logic?
 
-It probably belongs in Voodoo Runtime.
+It probably belongs in Grumo Runtime.
 
 Does it implement a physical product’s behavior?
 
@@ -1704,9 +1704,9 @@ It belongs in the product/application firmware.
 
 This separation should remain sacred:
 
-Voodoo Runtime
+Grumo Runtime
     = brain / orchestrator
-Voodoo Edge
+Grumo Edge
     = bridge + local execution layer
 Product Firmware
     = application behavior
@@ -1717,7 +1717,7 @@ Hardware
 
 57. Long-Term Vision
 
-Voodoo Edge should eventually make it possible to connect:
+Grumo Edge should eventually make it possible to connect:
 
 Sensors
 Motors
@@ -1731,13 +1731,13 @@ Computers
 Local services
 Applications
 
-into one coherent Voodoo Mesh.
+into one coherent Grumo Mesh.
 
-A physical device should become another first-class node in Voodoo.
+A physical device should become another first-class node in Grumo.
 
 The ultimate abstraction is:
 
-                 Voodoo Mesh
+                 Grumo Mesh
                       │
        ┌──────────────┼──────────────┐
        │              │              │
@@ -1745,6 +1745,6 @@ The ultimate abstraction is:
        │              │              │
        └──────────────┼──────────────┘
                       │
-                Voodoo Runtime
+                Grumo Runtime
 
-Voodoo Edge is the boundary that makes the physical and external world part of that architecture.
+Grumo Edge is the boundary that makes the physical and external world part of that architecture.

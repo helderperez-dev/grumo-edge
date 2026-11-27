@@ -52,7 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - HTTP transport (HTTPClient-based, POST + long-poll)
 
 #### Examples
-- `basic_button_led` — button press → LED toggle via Voodoo Runtime
+- `basic_button_led` — button press → LED toggle via Grumo Runtime
 - `motor_control` — motor speed + servo angle control
 - `sensor_monitor` — temperature reading + change events
 - `connected_device` — multi-capability device (LED, relay, buzzer, sensor)
