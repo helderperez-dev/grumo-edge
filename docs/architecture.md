@@ -1,9 +1,9 @@
-# Voodoo Edge — Architecture
+# Grumo Edge — Architecture
 
 ## Overview
 
-Voodoo Edge is a C++ SDK for connecting physical devices to the Voodoo Runtime
-via the `voodoo-edge/v1` protocol. It is designed as a reusable library that
+Grumo Edge is a C++ SDK for connecting physical devices to the Grumo Runtime
+via the `grumo-edge/v1` protocol. It is designed as a reusable library that
 abstracts platform-specific details behind a Hardware Abstraction Layer (HAL).
 
 ## Layer Architecture
@@ -13,7 +13,7 @@ abstracts platform-specific details behind a Hardware Abstraction Layer (HAL).
 │                 Application                      │
 │  (device firmware, capability handlers)          │
 ├─────────────────────────────────────────────────┤
-│              voodoo_edge (SDK)                   │
+│              grumo_edge (SDK)                   │
 │  ┌─────────────────────────────────────────────┐ │
 │  │  Device Facade                              │ │
 │  │  begin · connect · expose · emit · update   │ │
@@ -92,7 +92,7 @@ abstracts platform-specific details behind a Hardware Abstraction Layer (HAL).
 ## Connection Lifecycle
 
 ```
-Device                          Voodoo Runtime
+Device                          Grumo Runtime
   │                                    │
   │──── HELLO ────────────────────────►│
   │     (device_id, capabilities)      │
@@ -116,7 +116,7 @@ Device                          Voodoo Runtime
 
 ## Adding a New Platform
 
-1. Create `src/voodoo_edge/platform/<platform>/` directory
+1. Create `src/grumo_edge/platform/<platform>/` directory
 2. Implement all HAL interfaces (`Gpio`, `Pwm`, `Adc`, `I2c`, `Spi`, `Wifi`, etc.)
 3. Create a platform init function that registers implementations
 4. Add transport implementation (MQTT or HTTP)
@@ -130,7 +130,7 @@ Device                          Voodoo Runtime
 
 ## Adding a New Hardware Component
 
-1. Create `src/voodoo_edge/hardware/<component>.h/cpp`
+1. Create `src/grumo_edge/hardware/<component>.h/cpp`
 2. Use HAL interfaces (not platform-specific APIs)
-3. Include in `voodoo_edge.h` single-include header
+3. Include in `grumo_edge.h` single-include header
 4. Add an example in `examples/`

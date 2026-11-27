@@ -1,16 +1,16 @@
-# Voodoo Edge
+# Grumo Edge
 
 [![CI](https://github.com/helderperez-dev/grumo-edge/actions/workflows/ci.yml/badge.svg)](https://github.com/helderperez-dev/grumo-edge/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/helderperez-dev/grumo-edge)](https://github.com/helderperez-dev/grumo-edge/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![PlatformIO](https://img.shields.io/badge/PlatformIO-Registry-orange.svg)](https://registry.platformio.org/libraries/helderperez-dev/voodoo-edge)
+[![PlatformIO](https://img.shields.io/badge/PlatformIO-Registry-orange.svg)](https://registry.platformio.org/libraries/helderperez-dev/grumo-edge)
 [![Arduino](https://img.shields.io/badge/Arduino-Library_Manager-teal.svg)](#arduino-ide)
 
-C++ SDK for connecting physical devices to the [Voodoo Runtime](https://github.com/helderperez-dev/grumo).
+C++ SDK for connecting physical devices to the [Grumo Runtime](https://github.com/helderperez-dev/grumo).
 
-## What is Voodoo Edge?
+## What is Grumo Edge?
 
-Voodoo Edge is the device connectivity layer that bridges physical hardware to the Voodoo Runtime. It provides:
+Grumo Edge is the device connectivity layer that bridges physical hardware to the Grumo Runtime. It provides:
 
 - **Device Facade** — High-level API that ties everything together
 - **Protocol Layer** — Message types, serialization, validation
@@ -31,25 +31,25 @@ platform = espressif32
 board = esp32dev
 framework = arduino
 lib_deps =
-    helderperez-dev/voodoo-edge@^1.0.0
+    helderperez-dev/grumo-edge@^1.0.0
 ```
 
 Or install via CLI:
 
 ```bash
-pio pkg install --library "helderperez-dev/voodoo-edge"
+pio pkg install --library "helderperez-dev/grumo-edge"
 ```
 
 ### Arduino IDE
 
 1. Open **Sketch → Include Library → Manage Libraries**
-2. Search for **voodoo-edge**
+2. Search for **grumo-edge**
 3. Click **Install**
 
 Or install via CLI:
 
 ```bash
-arduino-cli lib install "voodoo-edge"
+arduino-cli lib install "grumo-edge"
 ```
 
 ### Manual / Git
@@ -75,15 +75,15 @@ platform = espressif32
 board = esp32dev
 framework = arduino
 lib_deps =
-    helderperez-dev/voodoo-edge@^1.0.0
+    helderperez-dev/grumo-edge@^1.0.0
 ```
 
 ### 2. Use the Device facade
 
 ```cpp
-#include <voodoo_edge.h>
+#include <grumo_edge.h>
 
-using namespace voodoo;
+using namespace grumo;
 
 edge::Device device;
 hardware::LedController led(hal::get_platform().gpio, 2);
@@ -121,7 +121,7 @@ void loop() {
 │                    Your Application                          │
 │  (vacuum-former, noise-monitor, robot, etc.)                │
 ├─────────────────────────────────────────────────────────────┤
-│                    Voodoo Edge SDK                           │
+│                    Grumo Edge SDK                           │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │  Device Facade (begin, connect, expose, emit, update)│   │
 │  ├─────────────────────────────────────────────────────┤   │
@@ -140,7 +140,7 @@ void loop() {
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Voodoo Runtime                            │
+│                    Grumo Runtime                            │
 │  (authoritative execution environment)                       │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -148,9 +148,9 @@ void loop() {
 ## Project Structure
 
 ```
-voodoo-edge/
+grumo-edge/
 ├── src/
-│   └── voodoo_edge/
+│   └── grumo_edge/
 │       ├── core/                    # Protocol logic (zero hardware deps)
 │       │   ├── protocol.h/cpp       # Message types, builders, validation
 │       │   ├── transport.h          # Abstract transport interface
@@ -181,10 +181,10 @@ voodoo-edge/
 │       │   ├── sensor.h/cpp
 │       │   └── temperature_sensor.h/cpp
 │       │
-│       └── voodoo_edge.h           # Single-include header
+│       └── grumo_edge.h           # Single-include header
 │
 ├── examples/
-│   ├── basic_button_led/            # LED + button via Voodoo Runtime
+│   ├── basic_button_led/            # LED + button via Grumo Runtime
 │   ├── motor_control/               # Motor + servo control
 │   ├── sensor_monitor/              # Temperature sensor + events
 │   └── connected_device/            # Multi-capability device
@@ -238,7 +238,7 @@ voodoo-edge/
 
 ## Examples
 
-- [basic_button_led](examples/basic_button_led/) — Button press → LED toggle via Voodoo Runtime
+- [basic_button_led](examples/basic_button_led/) — Button press → LED toggle via Grumo Runtime
 - [motor_control](examples/motor_control/) — Motor speed + servo angle control
 - [sensor_monitor](examples/sensor_monitor/) — Temperature reading + change events
 - [connected_device](examples/connected_device/) — Multi-capability device (LED, relay, buzzer, sensor)
