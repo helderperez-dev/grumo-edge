@@ -1,12 +1,12 @@
 // effect_dispatcher.cpp
-// Voodoo Edge — Effect dispatch implementation
+// Grumo Edge — Effect dispatch implementation
 
-#include "voodoo_edge/core/effect_dispatcher.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/core/effect_dispatcher.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 #include <cstdio>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 EffectDispatcher::EffectDispatcher(
@@ -97,4 +97,4 @@ void EffectDispatcher::send_ack(
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo

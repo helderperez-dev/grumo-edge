@@ -1,16 +1,16 @@
 // device_state.h
-// Voodoo Edge — Device state tracking
+// Grumo Edge — Device state tracking
 //
 // Maintains a JSON document representing the device's current state.
 // Tracks a monotonic state version for synchronization.
 
-#ifndef VODOO_CORE_DEVICE_STATE_H
-#define VODOO_CORE_DEVICE_STATE_H
+#ifndef GRUMO_CORE_DEVICE_STATE_H
+#define GRUMO_CORE_DEVICE_STATE_H
 
-#include "voodoo_edge/core/protocol.h"
+#include "grumo_edge/core/protocol.h"
 #include <cstdint>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 class DeviceState {
@@ -45,6 +45,6 @@ private:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_DEVICE_STATE_H
+#endif // GRUMO_CORE_DEVICE_STATE_H

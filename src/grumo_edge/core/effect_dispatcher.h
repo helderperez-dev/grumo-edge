@@ -1,18 +1,18 @@
 // effect_dispatcher.h
-// Voodoo Edge — Effect dispatch pipeline
+// Grumo Edge — Effect dispatch pipeline
 //
 // Receives EFFECT messages from the transport, validates them, dispatches
 // to the appropriate capability handler, and sends EFFECT_ACK responses.
 
-#ifndef VODOO_CORE_EFFECT_DISPATCHER_H
-#define VODOO_CORE_EFFECT_DISPATCHER_H
+#ifndef GRUMO_CORE_EFFECT_DISPATCHER_H
+#define GRUMO_CORE_EFFECT_DISPATCHER_H
 
-#include "voodoo_edge/core/protocol.h"
-#include "voodoo_edge/core/transport.h"
-#include "voodoo_edge/core/capability_registry.h"
-#include "voodoo_edge/core/idempotency.h"
+#include "grumo_edge/core/protocol.h"
+#include "grumo_edge/core/transport.h"
+#include "grumo_edge/core/capability_registry.h"
+#include "grumo_edge/core/idempotency.h"
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 // ---------------------------------------------------------------------------
@@ -48,6 +48,6 @@ private:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_EFFECT_DISPATCHER_H
+#endif // GRUMO_CORE_EFFECT_DISPATCHER_H

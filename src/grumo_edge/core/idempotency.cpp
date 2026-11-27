@@ -1,10 +1,10 @@
 // idempotency.cpp
-// Voodoo Edge — Idempotency cache implementation
+// Grumo Edge — Idempotency cache implementation
 
-#include "voodoo_edge/core/idempotency.h"
+#include "grumo_edge/core/idempotency.h"
 #include <cstring>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 IdempotencyCache::IdempotencyCache() : _write_pos(0), _count(0) {
@@ -47,4 +47,4 @@ size_t IdempotencyCache::count() const {
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo

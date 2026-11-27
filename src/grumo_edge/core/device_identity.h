@@ -1,17 +1,17 @@
 // device_identity.h
-// Voodoo Edge — Device identity
+// Grumo Edge — Device identity
 //
 // Holds device identity information: ID, type, firmware version,
 // hardware revision, and other metadata.
 
-#ifndef VODOO_CORE_DEVICE_IDENTITY_H
-#define VODOO_CORE_DEVICE_IDENTITY_H
+#ifndef GRUMO_CORE_DEVICE_IDENTITY_H
+#define GRUMO_CORE_DEVICE_IDENTITY_H
 
-#include "voodoo_edge/core/protocol.h"
+#include "grumo_edge/core/protocol.h"
 #include <cstdint>
 #include <cstring>
 
-namespace voodoo
+namespace grumo
 {
     namespace edge
     {
@@ -63,6 +63,6 @@ namespace voodoo
         };
 
     } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_DEVICE_IDENTITY_H
+#endif // GRUMO_CORE_DEVICE_IDENTITY_H

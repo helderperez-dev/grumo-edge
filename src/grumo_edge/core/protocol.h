@@ -1,27 +1,27 @@
 // protocol.h
-// Voodoo Edge — voodoo-edge/v1 protocol definitions
+// Grumo Edge — grumo-edge/v1 protocol definitions
 //
-// Transport-independent message schemas matching the Voodoo Runtime.
+// Transport-independent message schemas matching the Grumo Runtime.
 // All fields are protocol-level primitives: string, int, bool, object, array.
 
-#ifndef VODOO_CORE_PROTOCOL_H
-#define VODOO_CORE_PROTOCOL_H
+#ifndef GRUMO_CORE_PROTOCOL_H
+#define GRUMO_CORE_PROTOCOL_H
 
 #include <ArduinoJson.h>
 #include <cstdint>
 #include <cstddef>
 
 // Protocol constants (can be overridden at build time)
-#ifndef VOODOO_EDGE_PROTOCOL_VERSION
-#define VOODOO_EDGE_PROTOCOL_VERSION "1"
+#ifndef GRUMO_EDGE_PROTOCOL_VERSION
+#define GRUMO_EDGE_PROTOCOL_VERSION "1"
 #endif
 
-#ifndef VOODOO_EDGE_FIRMWARE_VERSION
-#define VOODOO_EDGE_FIRMWARE_VERSION "1.0.0"
+#ifndef GRUMO_EDGE_FIRMWARE_VERSION
+#define GRUMO_EDGE_FIRMWARE_VERSION "1.0.0"
 #endif
 
-#ifndef VOODOO_EDGE_PROTOCOL_NAME
-#define VOODOO_EDGE_PROTOCOL_NAME "voodoo-edge"
+#ifndef GRUMO_EDGE_PROTOCOL_NAME
+#define GRUMO_EDGE_PROTOCOL_NAME "grumo-edge"
 #endif
 
 // Buffer size limits
@@ -49,14 +49,14 @@
 #define IDEMPOTENCY_CACHE_SIZE 32
 #endif
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 // ---------------------------------------------------------------------------
 // Protocol identity
 // ---------------------------------------------------------------------------
-constexpr const char* PROTOCOL_NAME = VOODOO_EDGE_PROTOCOL_NAME;
-constexpr const char* PROTOCOL_VERSION = VOODOO_EDGE_PROTOCOL_VERSION;
+constexpr const char* PROTOCOL_NAME = GRUMO_EDGE_PROTOCOL_NAME;
+constexpr const char* PROTOCOL_VERSION = GRUMO_EDGE_PROTOCOL_VERSION;
 
 // ---------------------------------------------------------------------------
 // Message types — the seven v1 types
@@ -180,6 +180,6 @@ bool validate_message(const EdgeMessage& msg);
 void generate_message_id(char* buffer, size_t size);
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_PROTOCOL_H
+#endif // GRUMO_CORE_PROTOCOL_H

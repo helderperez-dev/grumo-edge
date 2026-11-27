@@ -1,9 +1,9 @@
 // device_state.cpp
-// Voodoo Edge — Device state implementation
+// Grumo Edge — Device state implementation
 
-#include "voodoo_edge/core/device_state.h"
+#include "grumo_edge/core/device_state.h"
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 DeviceState::DeviceState() : _version(0), _synced_version(0) {
@@ -51,4 +51,4 @@ EdgeMessage DeviceState::build_sync_message(const char* device_id) const {
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo

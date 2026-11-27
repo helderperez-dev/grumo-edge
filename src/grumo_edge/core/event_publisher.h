@@ -1,15 +1,15 @@
 // event_publisher.h
-// Voodoo Edge — Event publishing
+// Grumo Edge — Event publishing
 //
 // Validates and publishes EVENT messages through the transport.
 
-#ifndef VODOO_CORE_EVENT_PUBLISHER_H
-#define VODOO_CORE_EVENT_PUBLISHER_H
+#ifndef GRUMO_CORE_EVENT_PUBLISHER_H
+#define GRUMO_CORE_EVENT_PUBLISHER_H
 
-#include "voodoo_edge/core/protocol.h"
-#include "voodoo_edge/core/transport.h"
+#include "grumo_edge/core/protocol.h"
+#include "grumo_edge/core/transport.h"
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 class EventPublisher {
@@ -28,6 +28,6 @@ private:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_EVENT_PUBLISHER_H
+#endif // GRUMO_CORE_EVENT_PUBLISHER_H

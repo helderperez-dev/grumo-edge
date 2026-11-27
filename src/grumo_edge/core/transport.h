@@ -1,16 +1,16 @@
 // transport.h
-// Voodoo Edge — Abstract transport interface
+// Grumo Edge — Abstract transport interface
 //
 // Transport implementations (MQTT, HTTP, etc.) must implement this interface.
-// The transport is responsible for connecting to the Voodoo Runtime and
+// The transport is responsible for connecting to the Grumo Runtime and
 // delivering/receiving protocol messages.
 
-#ifndef VODOO_CORE_TRANSPORT_H
-#define VODOO_CORE_TRANSPORT_H
+#ifndef GRUMO_CORE_TRANSPORT_H
+#define GRUMO_CORE_TRANSPORT_H
 
-#include "voodoo_edge/core/protocol.h"
+#include "grumo_edge/core/protocol.h"
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 // ---------------------------------------------------------------------------
@@ -53,6 +53,6 @@ public:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_TRANSPORT_H
+#endif // GRUMO_CORE_TRANSPORT_H

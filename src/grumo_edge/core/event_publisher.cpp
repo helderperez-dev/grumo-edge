@@ -1,11 +1,11 @@
 // event_publisher.cpp
-// Voodoo Edge — Event publisher implementation
+// Grumo Edge — Event publisher implementation
 
-#include "voodoo_edge/core/event_publisher.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/core/event_publisher.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 EventPublisher::EventPublisher(Transport& transport, const char* device_id)
@@ -41,4 +41,4 @@ bool EventPublisher::publish(const char* event_name, JsonObjectConst payload) {
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo

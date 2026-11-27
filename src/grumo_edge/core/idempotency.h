@@ -1,11 +1,11 @@
 // idempotency.h
-// Voodoo Edge — Idempotency cache
+// Grumo Edge — Idempotency cache
 //
 // Bounded circular buffer that tracks recently processed effect IDs.
 // Prevents duplicate processing of effects that may be delivered more than once.
 
-#ifndef VODOO_CORE_IDEMPOTENCY_H
-#define VODOO_CORE_IDEMPOTENCY_H
+#ifndef GRUMO_CORE_IDEMPOTENCY_H
+#define GRUMO_CORE_IDEMPOTENCY_H
 
 #include <cstdint>
 #include <cstddef>
@@ -14,7 +14,7 @@
 #define IDEMPOTENCY_CACHE_SIZE 32
 #endif
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 class IdempotencyCache {
@@ -45,6 +45,6 @@ private:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_IDEMPOTENCY_H
+#endif // GRUMO_CORE_IDEMPOTENCY_H

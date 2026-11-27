@@ -1,12 +1,12 @@
 // protocol.cpp
-// Voodoo Edge — Protocol implementation
+// Grumo Edge — Protocol implementation
 
-#include "voodoo_edge/core/protocol.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/core/protocol.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 #include <cstdio>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 // ---------------------------------------------------------------------------
@@ -334,4 +334,4 @@ void generate_message_id(char* buffer, size_t size) {
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
