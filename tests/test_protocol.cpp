@@ -1,10 +1,10 @@
 // test_protocol.cpp
-// Voodoo Edge — Protocol unit tests
+// Grumo Edge — Protocol unit tests
 
 #include <unity.h>
-#include "voodoo_edge/core/protocol.h"
+#include "grumo_edge/core/protocol.h"
 
-using namespace voodoo::edge;
+using namespace grumo::edge;
 
 void test_message_type_conversion() {
     TEST_ASSERT_EQUAL_STRING("hello", message_type_to_string(MessageType::HELLO));

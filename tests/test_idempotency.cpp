@@ -1,11 +1,11 @@
 // test_idempotency.cpp
-// Voodoo Edge — Idempotency cache unit tests
+// Grumo Edge — Idempotency cache unit tests
 
 #include <unity.h>
 #include <cstdio>
-#include "voodoo_edge/core/idempotency.h"
+#include "grumo_edge/core/idempotency.h"
 
-using namespace voodoo::edge;
+using namespace grumo::edge;
 
 void test_basic_seen() {
     IdempotencyCache cache;

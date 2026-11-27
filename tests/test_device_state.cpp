@@ -1,10 +1,10 @@
 // test_device_state.cpp
-// Voodoo Edge — Device state unit tests
+// Grumo Edge — Device state unit tests
 
 #include <unity.h>
-#include "voodoo_edge/core/device_state.h"
+#include "grumo_edge/core/device_state.h"
 
-using namespace voodoo::edge;
+using namespace grumo::edge;
 
 void test_initial_state() {
     DeviceState state;

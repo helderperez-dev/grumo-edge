@@ -1,5 +1,5 @@
 // test_main.cpp
-// Voodoo Edge — Unity test runner for native tests
+// Grumo Edge — Unity test runner for native tests
 
 #include <unity.h>
 
