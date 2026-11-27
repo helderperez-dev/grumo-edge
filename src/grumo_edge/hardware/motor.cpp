@@ -1,10 +1,10 @@
 // motor.cpp
-// Voodoo Edge — Motor controller implementation
+// Grumo Edge — Motor controller implementation
 
-#include "voodoo_edge/hardware/motor.h"
+#include "grumo_edge/hardware/motor.h"
 #include <cmath>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -74,4 +74,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

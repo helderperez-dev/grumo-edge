@@ -1,16 +1,16 @@
 // encoder.h
-// Voodoo Edge — Rotary encoder hardware abstraction
+// Grumo Edge — Rotary encoder hardware abstraction
 //
 // Platform-independent quadrature encoder using GPIO.
 // Tracks position via interrupt-safe state machine.
 
-#ifndef VODOO_HARDWARE_ENCODER_H
-#define VODOO_HARDWARE_ENCODER_H
+#ifndef GRUMO_HARDWARE_ENCODER_H
+#define GRUMO_HARDWARE_ENCODER_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -49,6 +49,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_ENCODER_H
+#endif // GRUMO_HARDWARE_ENCODER_H

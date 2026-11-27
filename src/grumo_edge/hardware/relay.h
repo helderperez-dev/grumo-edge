@@ -1,15 +1,15 @@
 // relay.h
-// Voodoo Edge — Relay hardware abstraction
+// Grumo Edge — Relay hardware abstraction
 //
 // Platform-independent relay controller using GPIO.
 
-#ifndef VODOO_HARDWARE_RELAY_H
-#define VODOO_HARDWARE_RELAY_H
+#ifndef GRUMO_HARDWARE_RELAY_H
+#define GRUMO_HARDWARE_RELAY_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -33,6 +33,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_RELAY_H
+#endif // GRUMO_HARDWARE_RELAY_H

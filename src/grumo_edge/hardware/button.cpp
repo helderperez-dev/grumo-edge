@@ -1,9 +1,9 @@
 // button.cpp
-// Voodoo Edge — Button controller implementation
+// Grumo Edge — Button controller implementation
 
-#include "voodoo_edge/hardware/button.h"
+#include "grumo_edge/hardware/button.h"
 
-namespace voodoo {
+namespace grumo {
 namespace hardware {
 
 ButtonController::ButtonController(hal::Gpio& gpio, hal::Timer& timer, uint8_t pin, uint32_t debounce_ms)
@@ -56,4 +56,4 @@ bool ButtonController::is_pressed() const {
 }
 
 } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

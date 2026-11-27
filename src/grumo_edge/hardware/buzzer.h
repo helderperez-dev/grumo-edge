@@ -1,15 +1,15 @@
 // buzzer.h
-// Voodoo Edge — Buzzer hardware abstraction
+// Grumo Edge — Buzzer hardware abstraction
 //
 // Platform-independent buzzer using PWM for tone generation.
 
-#ifndef VODOO_HARDWARE_BUZZER_H
-#define VODOO_HARDWARE_BUZZER_H
+#ifndef GRUMO_HARDWARE_BUZZER_H
+#define GRUMO_HARDWARE_BUZZER_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -41,6 +41,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_BUZZER_H
+#endif // GRUMO_HARDWARE_BUZZER_H

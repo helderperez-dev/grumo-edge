@@ -1,15 +1,15 @@
 // led.h
-// Voodoo Edge — LED hardware abstraction
+// Grumo Edge — LED hardware abstraction
 //
 // Platform-independent LED controller using the HAL GPIO interface.
 
-#ifndef VODOO_HARDWARE_LED_H
-#define VODOO_HARDWARE_LED_H
+#ifndef GRUMO_HARDWARE_LED_H
+#define GRUMO_HARDWARE_LED_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo {
+namespace grumo {
 namespace hardware {
 
 class LedController {
@@ -29,6 +29,6 @@ private:
 };
 
 } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_LED_H
+#endif // GRUMO_HARDWARE_LED_H

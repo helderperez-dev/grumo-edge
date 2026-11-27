@@ -1,9 +1,9 @@
 // led.cpp
-// Voodoo Edge — LED controller implementation
+// Grumo Edge — LED controller implementation
 
-#include "voodoo_edge/hardware/led.h"
+#include "grumo_edge/hardware/led.h"
 
-namespace voodoo {
+namespace grumo {
 namespace hardware {
 
 LedController::LedController(hal::Gpio& gpio, uint8_t pin)
@@ -38,4 +38,4 @@ bool LedController::is_on() const {
 }
 
 } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

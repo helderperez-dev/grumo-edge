@@ -1,9 +1,9 @@
 // encoder.cpp
-// Voodoo Edge — Encoder controller implementation
+// Grumo Edge — Encoder controller implementation
 
-#include "voodoo_edge/hardware/encoder.h"
+#include "grumo_edge/hardware/encoder.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -76,4 +76,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

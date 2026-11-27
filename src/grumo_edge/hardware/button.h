@@ -1,15 +1,15 @@
 // button.h
-// Voodoo Edge — Button hardware abstraction
+// Grumo Edge — Button hardware abstraction
 //
 // Platform-independent debounced button using the HAL GPIO and Timer interfaces.
 
-#ifndef VODOO_HARDWARE_BUTTON_H
-#define VODOO_HARDWARE_BUTTON_H
+#ifndef GRUMO_HARDWARE_BUTTON_H
+#define GRUMO_HARDWARE_BUTTON_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo {
+namespace grumo {
 namespace hardware {
 
 typedef void (*ButtonPressCallback)(void* user_data);
@@ -36,6 +36,6 @@ private:
 };
 
 } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_BUTTON_H
+#endif // GRUMO_HARDWARE_BUTTON_H

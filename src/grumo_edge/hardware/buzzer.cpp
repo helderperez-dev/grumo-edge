@@ -1,9 +1,9 @@
 // buzzer.cpp
-// Voodoo Edge — Buzzer controller implementation
+// Grumo Edge — Buzzer controller implementation
 
-#include "voodoo_edge/hardware/buzzer.h"
+#include "grumo_edge/hardware/buzzer.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -60,4 +60,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

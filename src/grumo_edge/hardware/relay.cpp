@@ -1,9 +1,9 @@
 // relay.cpp
-// Voodoo Edge — Relay controller implementation
+// Grumo Edge — Relay controller implementation
 
-#include "voodoo_edge/hardware/relay.h"
+#include "grumo_edge/hardware/relay.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -45,4 +45,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

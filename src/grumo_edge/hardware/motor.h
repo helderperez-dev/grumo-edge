@@ -1,16 +1,16 @@
 // motor.h
-// Voodoo Edge — Motor hardware abstraction
+// Grumo Edge — Motor hardware abstraction
 //
 // Platform-independent DC motor controller using PWM and GPIO.
 // Supports direction control via H-bridge and speed via PWM.
 
-#ifndef VODOO_HARDWARE_MOTOR_H
-#define VODOO_HARDWARE_MOTOR_H
+#ifndef GRUMO_HARDWARE_MOTOR_H
+#define GRUMO_HARDWARE_MOTOR_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -47,6 +47,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_MOTOR_H
+#endif // GRUMO_HARDWARE_MOTOR_H
