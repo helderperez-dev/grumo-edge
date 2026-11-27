@@ -1,10 +1,10 @@
 // capability_registry.cpp
-// Voodoo Edge — Capability registry implementation
+// Grumo Edge — Capability registry implementation
 
-#include "voodoo_edge/core/capability_registry.h"
+#include "grumo_edge/core/capability_registry.h"
 #include <cstring>
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 CapabilityRegistry::CapabilityRegistry() : _count(0) {
@@ -71,4 +71,4 @@ bool CapabilityRegistry::has(const char* name) const {
 }
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo

@@ -1,11 +1,11 @@
 // connection_manager.cpp
-// Voodoo Edge — Connection manager implementation
+// Grumo Edge — Connection manager implementation
 
-#include "voodoo_edge/core/connection_manager.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/core/connection_manager.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 
-namespace voodoo
+namespace grumo
 {
     namespace edge
     {
@@ -295,4 +295,4 @@ namespace voodoo
         }
 
     } // namespace edge
-} // namespace voodoo
+} // namespace grumo

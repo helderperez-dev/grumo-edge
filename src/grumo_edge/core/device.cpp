@@ -1,11 +1,11 @@
 // device.cpp
-// Voodoo Edge — Device facade implementation
+// Grumo Edge — Device facade implementation
 
-#include "voodoo_edge/core/device.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/core/device.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 
-namespace voodoo
+namespace grumo
 {
     namespace edge
     {
@@ -27,7 +27,7 @@ namespace voodoo
             DeviceConfig config;
             config.identity.set_device_id(device_id);
             config.identity.set_device_type(device_type);
-            config.identity.set_firmware_version(VOODOO_EDGE_FIRMWARE_VERSION);
+            config.identity.set_firmware_version(GRUMO_EDGE_FIRMWARE_VERSION);
             config.credential = nullptr;
             config.heartbeat_interval_ms = 30000;
             config.state_sync_interval_ms = 60000;
@@ -172,4 +172,4 @@ namespace voodoo
         }
 
     } // namespace edge
-} // namespace voodoo
+} // namespace grumo

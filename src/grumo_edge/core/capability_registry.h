@@ -1,13 +1,13 @@
 // capability_registry.h
-// Voodoo Edge — Capability registration and lookup
+// Grumo Edge — Capability registration and lookup
 //
 // Maps capability names (e.g. "led.control") to handler functions.
 // Bounded array — no dynamic allocation.
 
-#ifndef VODOO_CORE_CAPABILITY_REGISTRY_H
-#define VODOO_CORE_CAPABILITY_REGISTRY_H
+#ifndef GRUMO_CORE_CAPABILITY_REGISTRY_H
+#define GRUMO_CORE_CAPABILITY_REGISTRY_H
 
-#include "voodoo_edge/core/protocol.h"
+#include "grumo_edge/core/protocol.h"
 #include <cstdint>
 #include <cstddef>
 
@@ -15,7 +15,7 @@
 #define MAX_CAPABILITIES 8
 #endif
 
-namespace voodoo {
+namespace grumo {
 namespace edge {
 
 // ---------------------------------------------------------------------------
@@ -70,6 +70,6 @@ private:
 };
 
 } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_CAPABILITY_REGISTRY_H
+#endif // GRUMO_CORE_CAPABILITY_REGISTRY_H

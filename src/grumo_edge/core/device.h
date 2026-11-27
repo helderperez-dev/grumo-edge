@@ -1,13 +1,13 @@
 // device.h
-// Voodoo Edge — Device facade
+// Grumo Edge — Device facade
 //
 // High-level API that ties together all SDK components.
 // This is the primary entry point for application developers.
 //
 // Usage:
-//   #include <voodoo_edge.h>
+//   #include <grumo_edge.h>
 //
-//   voodoo::edge::Device device;
+//   grumo::edge::Device device;
 //
 //   void setup() {
 //       device.begin("my-device", "esp32");
@@ -19,20 +19,20 @@
 //       device.update();
 //   }
 
-#ifndef VODOO_CORE_DEVICE_H
-#define VODOO_CORE_DEVICE_H
+#ifndef GRUMO_CORE_DEVICE_H
+#define GRUMO_CORE_DEVICE_H
 
-#include "voodoo_edge/core/protocol.h"
-#include "voodoo_edge/core/transport.h"
-#include "voodoo_edge/core/capability_registry.h"
-#include "voodoo_edge/core/device_state.h"
-#include "voodoo_edge/core/device_identity.h"
-#include "voodoo_edge/core/effect_dispatcher.h"
-#include "voodoo_edge/core/event_publisher.h"
-#include "voodoo_edge/core/idempotency.h"
-#include "voodoo_edge/core/connection_manager.h"
+#include "grumo_edge/core/protocol.h"
+#include "grumo_edge/core/transport.h"
+#include "grumo_edge/core/capability_registry.h"
+#include "grumo_edge/core/device_state.h"
+#include "grumo_edge/core/device_identity.h"
+#include "grumo_edge/core/effect_dispatcher.h"
+#include "grumo_edge/core/event_publisher.h"
+#include "grumo_edge/core/idempotency.h"
+#include "grumo_edge/core/connection_manager.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace edge
     {
@@ -65,7 +65,7 @@ namespace voodoo
             // Initialize with full configuration
             void begin(const DeviceConfig &config);
 
-            // Connect to the Voodoo Runtime via the given transport
+            // Connect to the Grumo Runtime via the given transport
             void connect(Transport &transport);
 
             // Call from loop() — handles all SDK housekeeping
@@ -134,6 +134,6 @@ namespace voodoo
         };
 
     } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_DEVICE_H
+#endif // GRUMO_CORE_DEVICE_H

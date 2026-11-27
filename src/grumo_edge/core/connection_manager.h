@@ -1,23 +1,23 @@
 // connection_manager.h
-// Voodoo Edge — Connection manager
+// Grumo Edge — Connection manager
 //
-// Manages the lifecycle of an Edge connection to the Voodoo Runtime:
+// Manages the lifecycle of an Edge connection to the Grumo Runtime:
 //   HELLO → AUTH → connected → heartbeat / state sync → reconnect
 //
 // This is the state machine that orchestrates protocol messages.
 
-#ifndef VODOO_CORE_CONNECTION_MANAGER_H
-#define VODOO_CORE_CONNECTION_MANAGER_H
+#ifndef GRUMO_CORE_CONNECTION_MANAGER_H
+#define GRUMO_CORE_CONNECTION_MANAGER_H
 
-#include "voodoo_edge/core/protocol.h"
-#include "voodoo_edge/core/transport.h"
-#include "voodoo_edge/core/capability_registry.h"
-#include "voodoo_edge/core/device_state.h"
-#include "voodoo_edge/core/effect_dispatcher.h"
-#include "voodoo_edge/core/event_publisher.h"
-#include "voodoo_edge/core/idempotency.h"
+#include "grumo_edge/core/protocol.h"
+#include "grumo_edge/core/transport.h"
+#include "grumo_edge/core/capability_registry.h"
+#include "grumo_edge/core/device_state.h"
+#include "grumo_edge/core/effect_dispatcher.h"
+#include "grumo_edge/core/event_publisher.h"
+#include "grumo_edge/core/idempotency.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace edge
     {
@@ -115,6 +115,6 @@ namespace voodoo
         };
 
     } // namespace edge
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_CORE_CONNECTION_MANAGER_H
+#endif // GRUMO_CORE_CONNECTION_MANAGER_H
