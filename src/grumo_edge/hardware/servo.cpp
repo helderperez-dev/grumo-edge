@@ -1,10 +1,10 @@
 // servo.cpp
-// Voodoo Edge — Servo controller implementation
+// Grumo Edge — Servo controller implementation
 
-#include "voodoo_edge/hardware/servo.h"
+#include "grumo_edge/hardware/servo.h"
 #include <cmath>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -75,4 +75,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

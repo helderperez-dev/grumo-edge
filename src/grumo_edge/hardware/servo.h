@@ -1,16 +1,16 @@
 // servo.h
-// Voodoo Edge — Servo motor hardware abstraction
+// Grumo Edge — Servo motor hardware abstraction
 //
 // Platform-independent servo controller using PWM.
 // Maps angle (0-180°) to appropriate pulse width.
 
-#ifndef VODOO_HARDWARE_SERVO_H
-#define VODOO_HARDWARE_SERVO_H
+#ifndef GRUMO_HARDWARE_SERVO_H
+#define GRUMO_HARDWARE_SERVO_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -51,6 +51,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_SERVO_H
+#endif // GRUMO_HARDWARE_SERVO_H

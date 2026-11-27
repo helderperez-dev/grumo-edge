@@ -1,16 +1,16 @@
 // hal.h
-// Voodoo Edge — Hardware Abstraction Layer interfaces
+// Grumo Edge — Hardware Abstraction Layer interfaces
 //
 // Platform implementations must provide concrete implementations of these
 // interfaces. This allows the core protocol layer to remain platform-independent.
 
-#ifndef VODOO_HAL_H
-#define VODOO_HAL_H
+#ifndef GRUMO_HAL_H
+#define GRUMO_HAL_H
 
 #include <cstdint>
 #include <cstddef>
 
-namespace voodoo
+namespace grumo
 {
     namespace hal
     {
@@ -255,6 +255,6 @@ namespace voodoo
         void set_platform(Platform *platform);
 
     } // namespace hal
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HAL_H
+#endif // GRUMO_HAL_H

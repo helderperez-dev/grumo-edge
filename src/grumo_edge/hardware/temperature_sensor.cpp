@@ -1,10 +1,10 @@
 // temperature_sensor.cpp
-// Voodoo Edge — Temperature sensor implementations
+// Grumo Edge — Temperature sensor implementations
 
-#include "voodoo_edge/hardware/temperature_sensor.h"
+#include "grumo_edge/hardware/temperature_sensor.h"
 #include <cmath>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -98,4 +98,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

@@ -1,16 +1,16 @@
 // sensor.h
-// Voodoo Edge — Generic sensor hardware abstraction
+// Grumo Edge — Generic sensor hardware abstraction
 //
 // Platform-independent analog sensor reader using ADC.
 // Supports calibration offset, scale factor, and smoothing.
 
-#ifndef VODOO_HARDWARE_SENSOR_H
-#define VODOO_HARDWARE_SENSOR_H
+#ifndef GRUMO_HARDWARE_SENSOR_H
+#define GRUMO_HARDWARE_SENSOR_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -53,6 +53,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_SENSOR_H
+#endif // GRUMO_HARDWARE_SENSOR_H

@@ -1,14 +1,14 @@
 // http_transport.cpp
-// Voodoo Edge — HTTP transport implementation
+// Grumo Edge — HTTP transport implementation
 
-#ifndef VOODOO_EDGE_NATIVE_TEST
+#ifndef GRUMO_EDGE_NATIVE_TEST
 
-#include "voodoo_edge/platform/esp32/http_transport.h"
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/esp32/http_transport.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstring>
 #include <cstdio>
 
-namespace voodoo
+namespace grumo
 {
     namespace platform
     {
@@ -192,6 +192,6 @@ namespace voodoo
 
         } // namespace esp32
     } // namespace platform
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VOODOO_EDGE_NATIVE_TEST
+#endif // GRUMO_EDGE_NATIVE_TEST

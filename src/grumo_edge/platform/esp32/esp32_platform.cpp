@@ -1,9 +1,9 @@
 // esp32_platform.cpp
-// Voodoo Edge — ESP32 platform implementation
+// Grumo Edge — ESP32 platform implementation
 
-#ifndef VOODOO_EDGE_NATIVE_TEST
+#ifndef GRUMO_EDGE_NATIVE_TEST
 
-#include "voodoo_edge/platform/esp32/esp32_platform.h"
+#include "grumo_edge/platform/esp32/esp32_platform.h"
 #include <Arduino.h>
 #include <WiFi.h>
 #include <Wire.h>
@@ -16,7 +16,7 @@
 #include <driver/ledc.h>
 #endif
 
-namespace voodoo
+namespace grumo
 {
     namespace platform
     {
@@ -418,6 +418,6 @@ namespace voodoo
 
         } // namespace esp32
     } // namespace platform
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VOODOO_EDGE_NATIVE_TEST
+#endif // GRUMO_EDGE_NATIVE_TEST

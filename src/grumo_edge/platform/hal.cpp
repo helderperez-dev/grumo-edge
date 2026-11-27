@@ -1,9 +1,9 @@
 // hal.cpp
-// Voodoo Edge — HAL platform registry
+// Grumo Edge — HAL platform registry
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 
-namespace voodoo
+namespace grumo
 {
     namespace hal
     {
@@ -27,4 +27,4 @@ namespace voodoo
         }
 
     } // namespace hal
-} // namespace voodoo
+} // namespace grumo

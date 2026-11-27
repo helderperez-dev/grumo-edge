@@ -1,10 +1,10 @@
 // sensor.cpp
-// Voodoo Edge — Sensor reader implementation
+// Grumo Edge — Sensor reader implementation
 
-#include "voodoo_edge/hardware/sensor.h"
+#include "grumo_edge/hardware/sensor.h"
 #include <cstring>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -81,4 +81,4 @@ namespace voodoo
         }
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo

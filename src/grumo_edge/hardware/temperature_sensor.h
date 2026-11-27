@@ -1,16 +1,16 @@
 // temperature_sensor.h
-// Voodoo Edge — Temperature sensor hardware abstraction
+// Grumo Edge — Temperature sensor hardware abstraction
 //
 // Platform-independent temperature reading.
 // Supports NTC thermistors (via ADC) and I2C digital sensors.
 
-#ifndef VODOO_HARDWARE_TEMPERATURE_SENSOR_H
-#define VODOO_HARDWARE_TEMPERATURE_SENSOR_H
+#ifndef GRUMO_HARDWARE_TEMPERATURE_SENSOR_H
+#define GRUMO_HARDWARE_TEMPERATURE_SENSOR_H
 
-#include "voodoo_edge/platform/hal.h"
+#include "grumo_edge/platform/hal.h"
 #include <cstdint>
 
-namespace voodoo
+namespace grumo
 {
     namespace hardware
     {
@@ -85,6 +85,6 @@ namespace voodoo
         };
 
     } // namespace hardware
-} // namespace voodoo
+} // namespace grumo
 
-#endif // VODOO_HARDWARE_TEMPERATURE_SENSOR_H
+#endif // GRUMO_HARDWARE_TEMPERATURE_SENSOR_H
